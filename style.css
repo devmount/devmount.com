@@ -176,6 +176,9 @@ p:last-child {
 .click-box:is(:hover, :focus-within) a > svg {
   stroke: var(--accent2);
 }
+.click-box:is(:hover, :focus-within) a > svg.fill-black {
+  fill: var(--accent2);
+}
 nav:has(.nav-box:first-child input:checked) ~ section > div:first-child {
   display: block;
 }
