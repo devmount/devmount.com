@@ -93,7 +93,7 @@ h1, h2, h3, h4 {
 
 a {
   color: var(--accent1);
-  text-decoration: none;
+  text-decoration-line: none;
   text-underline-offset: 1px;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -101,7 +101,7 @@ a {
 }
 a:hover {
   color: color-mix(in srgb, var(--accent1) 80%, white);
-  text-decoration: underline;
+  text-decoration-line: underline;
   text-underline-offset: 3px;
 }
 
@@ -132,7 +132,6 @@ p:last-child {
 .content-box {
   border: 1px solid color-mix(in srgb, var(--accent1) 20%, white);
   background-color: white;
-  padding: 1rem;
   border-radius: 6px;
 }
 
@@ -273,6 +272,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
   width: 4rem;
   height: 4rem;
 }
+.w-16 {
+  width: 4rem;
+}
 .w-full {
   width: 100%;
 }
@@ -298,12 +300,21 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .p-0 {
   padding: 0;
 }
+.p-4 {
+  padding: 1rem;
+}
 .shrink-0 {
   flex-shrink: 0;
+}
+.grow {
+  flex-grow: 1;
 }
 .whitespace-nowrap {
   white-space: nowrap;
 }
 .\!rounded-full {
   border-radius: 9999px !important;
+}
+.\!no-underline {
+  text-decoration-line: none !important;
 }
