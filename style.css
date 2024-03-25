@@ -160,6 +160,15 @@ p:last-child {
 .nav-box:has(input:checked) h2 > svg {
   transform: scale(1.1);
 }
+nav:has(.nav-box:first-child input:checked) ~ section > div:first-child {
+  display: block;
+}
+nav:has(.nav-box:nth-child(2) input:checked) ~ section > div:nth-child(2) {
+  display: block;
+}
+nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
+  display: block;
+}
 
 /* tw utilities */
 .font-black {
@@ -194,6 +203,9 @@ p:last-child {
 }
 .hidden {
   display: none;
+}
+.flex-col {
+  flex-direction: column;
 }
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
