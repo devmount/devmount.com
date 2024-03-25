@@ -2,6 +2,9 @@
   --accent1: #08f;
   --accent2: #f25;
   --accent-gradient: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, white 60%);
+  --accent1-gradient: linear-gradient(45deg, #223, var(--accent1) 30%, white 60%);
+  --accent2-gradient: linear-gradient(45deg, #223, var(--accent2) 30%, white 60%);
+  --gray-gradient: linear-gradient(45deg, #223, #667 30%, white 60%);
   --accent1-dark: #16b;
   --accent2-dark: #a24;
   --accent-gradient-dark: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, white 60%);
@@ -66,7 +69,7 @@
 html {
   font-family: Inter, system-ui, sans-serif;
   background-color: #f6f6f6;
-  color: #161616;
+  color: #334;
 }
 html.dark {
   background-color: #101112;
@@ -83,8 +86,9 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   margin: 0;
+  letter-spacing: .025em;
 }
 
 a {
@@ -109,10 +113,17 @@ p:last-child {
 }
 
 
-/* utilities */
+/* special utilities */
 .text-featured {
   background-clip: text;
   background-image: var(--accent-gradient);
+  background-position: 0%;
+  background-size: 400%;
+  color: transparent;
+}
+.text-emphasized {
+  background-clip: text;
+  background-image: var(--gray-gradient);
   background-position: 0%;
   background-size: 400%;
   color: transparent;
@@ -125,7 +136,8 @@ p:last-child {
   border-radius: 6px;
 }
 
-.nav-box {
+.nav-box,
+.click-box {
   list-style: none;
   display: flex;
   padding: 2px;
@@ -137,11 +149,10 @@ p:last-child {
   transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
-.nav-box > label {
-  width: 100%;
-  text-decoration: none;
+.nav-box > label,
+.click-box > a {
   line-height: 1.4;
-  padding: 1rem 1.3rem;
+  padding: 1rem;
   border-radius: 4px;
   color: #111;
   background-color: white;
@@ -149,7 +160,8 @@ p:last-child {
   cursor: pointer;
 }
 .nav-box:is(:hover, :focus-within),
-.nav-box:has(input:checked) {
+.nav-box:has(input:checked),
+.click-box:is(:hover, :focus-within) {
   background-position: 0;
 }
 .nav-box:is(:hover, :focus-within) h2,
@@ -157,8 +169,12 @@ p:last-child {
   color: var(--accent1);
 }
 .nav-box:is(:hover, :focus-within) h2 > svg,
-.nav-box:has(input:checked) h2 > svg {
+.nav-box:has(input:checked) h2 > svg,
+.click-box:is(:hover, :focus-within) a > svg {
   transform: scale(1.1);
+}
+.click-box:is(:hover, :focus-within) a > svg {
+  stroke: var(--accent2);
 }
 nav:has(.nav-box:first-child input:checked) ~ section > div:first-child {
   display: block;
@@ -171,6 +187,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 }
 
 /* tw utilities */
+.font-medium {
+  font-weight: 600;
+}
 .font-black {
   font-weight: 900;
 }
@@ -192,6 +211,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .fill-none {
   fill: none;
 }
+.fill-black {
+  fill: #000;
+}
 .animate-blink {
   animation: pulse 1s linear infinite;
 }
@@ -207,37 +229,46 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .flex-col {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .items-center {
   align-items: center;
+}
+.text-center {
+  text-align: center;
 }
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
 }
-.h-7 {
+.size-7 {
+  width: 1.75rem;
   height: 1.75rem;
 }
-.h-16 {
+.size-16 {
+  width: 4rem;
   height: 4rem;
 }
-.w-7 {
-  width: 1.75rem;
-}
-.w-16 {
-  width: 4rem;
-}
-.w-20 {
-  width: 5rem;
+.w-full {
+  width: 100%;
 }
 .gap-2 {
   gap: .5rem;
@@ -249,8 +280,14 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
   margin-top: 3rem;
   margin-bottom: 3rem
 }
+.mb-2 {
+  margin-bottom: .5rem
+}
 .mb-4 {
   margin-bottom: 1rem
+}
+.mb-8 {
+  margin-bottom: 2rem
 }
 .p-0 {
   padding: 0;
@@ -260,4 +297,7 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 }
 .whitespace-nowrap {
   white-space: nowrap;
+}
+.\!rounded-full {
+  border-radius: 9999px !important;
 }
