@@ -111,9 +111,6 @@ a:hover {
 }
 
 p {
-  margin: 0 0 1rem 0;
-}
-p:last-child {
   margin: 0;
 }
 
@@ -366,6 +363,10 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 }
 .m-0 {
   margin: 0;
+}
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem
 }
 .my-12 {
   margin-top: 3rem;
