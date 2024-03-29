@@ -1,10 +1,12 @@
 :root {
   --accent1: #08f;
   --accent2: #f25;
+  --gray1: #223;
+  --gray2: #667;
   --accent-gradient: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, white 60%);
-  --accent1-gradient: linear-gradient(45deg, #223, var(--accent1) 30%, white 60%);
-  --accent2-gradient: linear-gradient(45deg, #223, var(--accent2) 30%, white 60%);
-  --gray-gradient: linear-gradient(45deg, #223, #667 30%, white 60%);
+  --accent1-gradient: linear-gradient(45deg, var(--gray1), var(--accent1) 30%, white 60%);
+  --accent2-gradient: linear-gradient(45deg, var(--gray1), var(--accent2) 30%, white 60%);
+  --gray-gradient: linear-gradient(45deg, var(--gray1), var(--gray2) 30%, white 60%);
   --accent1-gradient-vertical: linear-gradient(180deg, var(--accent1), transparent 100%);
   --accent-gradient-vertical: linear-gradient(0, var(--accent1), var(--accent2) 100%);
   --accent-gradient-vertical-reverse: linear-gradient(180deg, var(--accent1), var(--accent2) 100%);
@@ -184,6 +186,7 @@ nav ~ section > div.nav-content {
     transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
   transform-origin: top center;
   transform: scale(0.9);
+  overflow: hidden;
 }
 nav:has(.nav-box:nth-child(1) input:checked) ~ section > div:nth-child(1),
 nav:has(.nav-box:nth-child(2) input:checked) ~ section > div:nth-child(2),
@@ -191,6 +194,7 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
   opacity: 100;
   height: auto;
   transform: scale(1);
+  overflow: initial;
 }
 
 .border-accent1 {
@@ -199,11 +203,17 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .border-accent2 {
   border: var(--accent2);
 }
+.border-gray2 {
+  border: var(--gray2);
+}
 .stroke-accent1 {
   stroke: var(--accent1);
 }
 .stroke-accent2 {
   stroke: var(--accent2);
+}
+.stroke-gray2 {
+  stroke: var(--gray2);
 }
 .bg-accent1,
 .before\:bg-accent1::before {
@@ -350,6 +360,12 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 }
 .gap-6 {
   gap: 1.5rem;
+}
+.gap-8 {
+  gap: 2rem;
+}
+.m-0 {
+  margin: 0;
 }
 .my-12 {
   margin-top: 3rem;
