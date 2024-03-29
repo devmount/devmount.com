@@ -241,6 +241,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 
 /* tw utilities */
 .font-medium {
+  font-weight: 500;
+}
+.font-semibold {
   font-weight: 600;
 }
 .font-black {
