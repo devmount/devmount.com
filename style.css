@@ -198,7 +198,8 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .stroke-accent2 {
   stroke: var(--accent2);
 }
-.bg-accent1 {
+.bg-accent1,
+.before\:bg-accent1::before {
   background: var(--accent1);
 }
 .bg-accent-gradient {
@@ -237,14 +238,17 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .stroke-current {
   stroke: currentColor;
 }
+.stroke-1\.75 {
+  stroke-width: 1.75;
+}
 .stroke-2 {
-  stroke-width: 2px;
+  stroke-width: 2;
 }
 .stroke-3 {
-  stroke-width: 3px;
+  stroke-width: 3;
 }
 .stroke-12 {
-  stroke-width: 12px;
+  stroke-width: 12;
 }
 .fill-none {
   fill: none;
@@ -326,6 +330,10 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 }
 .w-full {
   width: 100%;
+}
+.before\:h-16::before,
+.h-16 {
+  height: 4rem;
 }
 .gap-2 {
   gap: .5rem;
