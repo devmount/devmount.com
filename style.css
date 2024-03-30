@@ -387,6 +387,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .mt-1 {
   margin-top: .25rem
 }
+.mt-4 {
+  margin-top: 1rem
+}
 .mt-8 {
   margin-top: 2rem
 }
