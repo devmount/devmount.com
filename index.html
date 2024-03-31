@@ -47,7 +47,7 @@
 
     <!-- navigation for three main content sections -->
     <nav>
-      <ul role="list" class="grid grid-cols-3 gap-4 p-0 m-0">
+      <ul role="list" class="grid grid-cols-2 lg:grid-cols-3 gap-4 p-0 m-0">
         <li class="nav-box bg-accent-gradient shadow">
           <label class="bg-white p-4">
             <input type="radio" name="nav" class="hidden" />
@@ -65,7 +65,7 @@
               </svg>
             </h2>
             <p class="text-sm">
-              Experience, skills and resume - information if you'd like to hire me.
+              Experience, skills and resume - useful information if you'd like to hire me.
             </p>
           </label>
         </li>
@@ -220,7 +220,7 @@
               </div>
             </div>
 
-            <div class="relative flex items-start gap-4 before:vertical-line before:bg-accent1-gradient-vertical before:h-16">
+            <div class="relative flex items-start gap-4 before:vertical-line before:bg-accent1-gradient-vertical before:h-1/2">
               <div class="flex rounded-full mt-1 p-4 border-2 border-solid border-accent1 z-1">
                 <svg
                   role="img"
@@ -381,7 +381,7 @@
               </div>
             </div>
 
-            <div class="relative flex items-start gap-4 before:vertical-line before:bg-accent1-gradient-vertical before:h-16">
+            <div class="relative flex items-start gap-4 before:vertical-line before:bg-accent1-gradient-vertical before:h-1/2">
               <div class="flex rounded-full mt-1 p-4 border-2 border-solid border-accent1 z-1">
                 <svg
                   role="img"
@@ -548,7 +548,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h5 class="flex gap-6">
+                  <h5 class="flex flex-wrap gap-x-6">
                     <span class="font-black">You Can Quit!</span>
                     <span class="font-medium">//youcanqu.it</span>
                   </h5>
@@ -579,7 +579,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h5 class="flex gap-6">
+                  <h5 class="flex flex-wrap gap-x-6">
                     <span class="font-black">Task Generator</span>
                     <span class="font-medium">//tasks.devmount.de</span>
                   </h5>
@@ -610,7 +610,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h5 class="flex gap-6">
+                  <h5 class="flex flex-wrap gap-x-6">
                     <span class="font-black">Grades Calculator</span>
                     <span class="font-medium">//grades.devmount.de</span>
                   </h5>
@@ -641,7 +641,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h5 class="flex gap-6">
+                  <h5 class="flex flex-wrap gap-x-6">
                     <span class="font-black">Die Losungen</span>
                     <span class="font-medium">//losung.devmount.de</span>
                   </h5>
@@ -928,7 +928,7 @@
     </section>
 
     <!-- socials and contact -->
-    <section class="grid grid-cols-2 gap-4">
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div>
         <h3 class="font-black text-3xl text-center mb-8 text-emphasized">
           Let's connect
@@ -1147,30 +1147,30 @@
         <div class="flex flex-col gap-2">
           <div class="click-box bg-accent-gradient shadow">
             <a
-              class="flex gap-2 w-full !no-underline bg-white p-4"
+              class="grid grid-cols-2(1:2) gap-4 w-full !no-underline bg-white p-4"
               href="https://matrix.to/#/@devmount:matrix.org"
               target="_blank"
             >
-              <div class="w-16 font-semibold">Matrix</div>
+              <div class="w-16 font-semibold justify-self-end text-right">Matrix</div>
               <div>@devmount:matrix.org</div>
             </a>
           </div>
           <div class="click-box bg-accent-gradient shadow">
             <a
-              class="flex gap-2 w-full !no-underline bg-white p-4"
+              class="grid grid-cols-2(1:2) gap-4 w-full !no-underline bg-white p-4"
               href="https://keybase.io/devmount/pgp_keys.asc?fingerprint=65459d08695487f69e110b3b29b14997f76a5800"
               target="_blank"
             >
-              <div class="w-16 font-semibold">PGP</div>
+              <div class="w-16 font-semibold justify-self-end text-right">PGP</div>
               <div>29B1 4997 F76A 5800</div>
             </a>
           </div>
           <div class="click-box bg-accent-gradient shadow">
             <a
-              class="flex gap-2 w-full !no-underline bg-white p-4"
+              class="grid grid-cols-2(1:2) gap-4 w-full !no-underline bg-white p-4"
               href="mailto:hello@devmount.com"
             >
-              <div class="w-16 font-semibold">E-Mail</div>
+              <div class="w-16 font-semibold justify-self-end text-right">E-Mail</div>
               <div>hello@devmount.com</div>
             </a>
           </div>
@@ -1181,7 +1181,7 @@
   </main>
 
   <footer class="my-12">
-    <nav class="flex justify-between items-center text-sm">
+    <nav class="flex flex-wrap gap-4 justify-between items-center text-sm">
       <div class="text-sm">
         Copyright &copy; 2014 - 2024 Andreas Müller<br>
         Licensed under <a href="https://github.com/devmount/devmount.com/blob/main/LICENSE" target="_blank">MIT</a>.
