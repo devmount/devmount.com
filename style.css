@@ -1,18 +1,18 @@
 :root {
-  --accent1: #08f;
-  --accent2: #f25;
-  --gray1: #223;
-  --gray2: #667;
-  --accent-gradient: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, white 60%);
+  color-scheme: light dark;
+  --bg: light-dark(#f6f6f6, #202122);
+  --fg: light-dark(#334, #dfe2e3);
+  --accent1: light-dark(#08f, #38d);
+  --accent2: light-dark(#f25, #a24);
+  --gray1: light-dark(#223, #aab);
+  --gray2: light-dark(#667, #99a);
+  --accent-gradient: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, light-dark(white, #1c1c1c) 60%);
   --accent1-gradient: linear-gradient(45deg, var(--gray1), var(--accent1) 30%, white 60%);
   --accent2-gradient: linear-gradient(45deg, var(--gray1), var(--accent2) 30%, white 60%);
   --gray-gradient: linear-gradient(45deg, var(--gray1), var(--gray2) 30%, white 60%);
   --accent1-gradient-vertical: linear-gradient(180deg, var(--accent1), transparent 100%);
   --accent-gradient-vertical: linear-gradient(0, var(--accent1), var(--accent2) 100%);
   --accent-gradient-vertical-reverse: linear-gradient(180deg, var(--accent1), var(--accent2) 100%);
-  /* --accent1-dark: #16b;
-  --accent2-dark: #a24;
-  --accent-gradient-dark: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, white 60%); */
 }
 
 @font-face {
@@ -73,12 +73,8 @@
 /* base styles */
 html {
   font-family: Inter, system-ui, sans-serif;
-  background-color: #f6f6f6;
-  color: #334;
-}
-html.dark {
-  background-color: #101112;
-  color: #dfe2e3;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 body {
@@ -132,8 +128,8 @@ p {
 }
 
 .content-box {
-  border: 1px solid color-mix(in srgb, var(--accent1) 20%, white);
-  background-color: white;
+  border: 1px solid color-mix(in srgb, var(--accent1) 20%, light-dark(white, #333));
+  background-color: light-dark(white, #1c1c1c);
   border-radius: 6px;
 }
 
@@ -151,7 +147,8 @@ p {
 .click-box > a {
   line-height: 1.4;
   border-radius: 4px;
-  color: #111;
+  color: var(--fg);
+  background-color: light-dark(white, #1c1c1c);
   opacity: 0.8;
   cursor: pointer;
 }
@@ -169,10 +166,10 @@ p {
 .click-box:is(:hover, :focus-within) a > svg {
   transform: scale(1.1);
 }
-.click-box:is(:hover, :focus-within) a > svg {
+.click-box:is(:hover, :focus-within) a > svg.stroke-current {
   stroke: var(--accent2);
 }
-.click-box:is(:hover, :focus-within) a > svg.fill-black {
+.click-box:is(:hover, :focus-within) a > svg.fill-current {
   fill: var(--accent2);
 }
 nav ~ section > div.nav-content {
@@ -270,11 +267,8 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .fill-none {
   fill: none;
 }
-.fill-black {
-  fill: #000;
-}
-.bg-white {
-  background-color: white;
+.fill-current {
+  fill: currentColor;
 }
 .animate-blink {
   animation: pulse 1s linear infinite;
@@ -441,8 +435,8 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 }
 .shadow {
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    0 4px 6px -1px light-dark(#00000020, #00000080),
+    0 2px 4px -2px light-dark(#00000020, #00000080);
 }
 .border-2 {
   border-width: 2px;
