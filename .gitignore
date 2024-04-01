@@ -1,3 +1,4 @@
 # special files
-legal.html
-privacy.html
+*.html
+!index.template.html
+.env
