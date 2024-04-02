@@ -3,7 +3,7 @@
   --bg: light-dark(#f6f6f6, #202122);
   --fg: light-dark(#334, #dfe2e3);
   --accent1: light-dark(#08f, #38d);
-  --accent2: light-dark(#f25, #a24);
+  --accent2: light-dark(#f25, #b35);
   --gray1: light-dark(#223, #aab);
   --gray2: light-dark(#667, #99a);
   --accent-gradient: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, light-dark(white, #1c1c1c) 60%);
