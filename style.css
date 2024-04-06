@@ -309,8 +309,14 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .justify-between {
   justify-content: space-between;
 }
-.justify-self-end	{
+.justify-self-end {
   justify-self: end;
+}
+.justify-self-center {
+  justify-self: center;
+}
+.self-center {
+  align-self: center;
 }
 .items-start {
   align-items: start;
