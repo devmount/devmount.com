@@ -289,7 +289,7 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 .flex {
   display: flex;
 }
-.inline-flex{
+.inline-flex {
   display: inline-flex;
 }
 .grid {
