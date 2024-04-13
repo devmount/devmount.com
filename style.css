@@ -191,6 +191,18 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
   overflow: initial;
 }
 
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1rem;
+  border-radius: 0.125rem;
+  background-image: var(--gray-gradient);
+  background-position: 0%;
+  background-size: 400%;
+  color: var(--bg);
+  padding: 0.125rem .25rem;
+}
+
 .border-accent1 {
   border: var(--accent1);
 }
@@ -276,6 +288,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .flex {
   display: flex;
 }
+.inline-flex{
+  display: inline-flex;
+}
 .grid {
   display: grid;
 }
@@ -330,6 +345,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .text-right {
   text-align: right;
 }
+.align-text-top {
+  vertical-align: text-top;
+}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -370,6 +388,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 .before\:h-16::before,
 .h-16 {
   height: 4rem;
+}
+.gap-1 {
+  gap: .25rem;
 }
 .gap-2 {
   gap: .5rem;
@@ -414,6 +435,9 @@ nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
 }
 .mt-8 {
   margin-top: 2rem
+}
+.ml-2 {
+  margin-left: .5rem
 }
 .p-0 {
   padding: 0;
