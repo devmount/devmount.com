@@ -184,7 +184,8 @@ nav ~ section > div.nav-content {
 }
 nav:has(.nav-box:nth-child(1) input:checked) ~ section > div:nth-child(1),
 nav:has(.nav-box:nth-child(2) input:checked) ~ section > div:nth-child(2),
-nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3) {
+nav:has(.nav-box:nth-child(3) input:checked) ~ section > div:nth-child(3),
+nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
   opacity: 100;
   height: auto;
   transform: scale(1);
