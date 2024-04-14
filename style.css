@@ -130,7 +130,7 @@ p {
 .content-box {
   border: 1px solid color-mix(in srgb, var(--accent1) 20%, light-dark(white, #333));
   background-color: light-dark(white, #1c1c1c);
-  border-radius: 6px;
+  border-radius: .375rem;
 }
 
 .nav-box,
@@ -139,7 +139,7 @@ p {
   display: flex;
   padding: 2px;
   background-size: 400%;
-  border-radius: 6px;
+  border-radius: .375rem;
   background-position: 100%;
   transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -249,6 +249,13 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
   background-image: var(--accent-gradient-vertical-reverse);
 }
 
+.hover\:bg-increase {
+  background-size: auto 100%;
+}
+.hover\:bg-increase:hover {
+  background-size: auto 120%;
+}
+
 /* tw utilities */
 .font-medium {
   font-weight: 500;
@@ -285,6 +292,9 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 }
 .animate-blink {
   animation: pulse 1s linear infinite;
+}
+.block {
+  display: block;
 }
 .flex {
   display: flex;
@@ -390,6 +400,9 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 .h-16 {
   height: 4rem;
 }
+.h-32 {
+  height: 8rem;
+}
 .gap-1 {
   gap: .25rem;
 }
@@ -458,6 +471,9 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 .whitespace-nowrap {
   white-space: nowrap;
 }
+.rounded {
+  border-radius: .25rem;
+}
 .rounded-full {
   border-radius: 9999px;
 }
@@ -466,6 +482,12 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 }
 .\!no-underline {
   text-decoration-line: none !important;
+}
+.bg-cover {
+  background-size: cover;
+}
+.bg-center {
+  background-position: center;
 }
 .shadow {
   box-shadow:
