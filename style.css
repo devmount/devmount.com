@@ -110,6 +110,16 @@ p {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+}
+ul > li {
+  padding-inline-start: 1ch;
+}
+ul > li::marker {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12l8 -4.5" /><path d="M12 12v9" /><path d="M12 12l-8 -4.5" /><path d="M12 12l8 4.5" /><path d="M12 3v9" /><path d="M12 12l-8 4.5" /></svg>');
+}
+
 
 /* special utilities */
 .text-featured {
