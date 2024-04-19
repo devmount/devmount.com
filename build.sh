@@ -24,11 +24,13 @@ QUERY='{
   }
 }'
 QUERY="$(echo $QUERY)"
-RESULT=$(curl -s -i -H 'Content-Type: application/json' -H "Authorization: bearer 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" -X POST -d "{\"query\": \"query $QUERY\"}" https://api.github.com/graphql | tail -n 1)
+RESULT=$(curl -s -i -H 'Content-Type: application/json' -H "Authorization: bearer $GITHUB_TOKEN" -X POST -d "{\"query\": \"query $QUERY\"}" https://api.github.com/graphql | tail -n 1)
 
 GH_ISSUES=$(python3 -c "import json; print(json.loads('$RESULT')['data']['viewer']['issues']['totalCount'])")
 GH_PRS=$(python3 -c "import json; print(json.loads('$RESULT')['data']['viewer']['pullRequests']['totalCount'])")
+GH_REPOS_CREATED=$(python3 -c "import json; print(len(json.loads('$RESULT')['data']['viewer']['repositories']['nodes']))")
 GH_REPOS_CONTRIBUTED=$(python3 -c "import json; print(json.loads('$RESULT')['data']['viewer']['repositoriesContributedTo']['totalCount'])")
+GH_STARS=$(python3 -c "import json; from functools import reduce; print(reduce(lambda a, c: a + c['stargazers']['totalCount'], json.loads('$RESULT')['data']['viewer']['repositories']['nodes'], 0))")
 
 # Create a new file from template
 cp index.template.html index.html
@@ -40,5 +42,7 @@ sed -i -e "s/{{profession_age}}/$PROFESSION_AGE/g" index.html
 sed -i -e "s/{{opensource_age}}/$OPENSOURCE_AGE/g" index.html
 sed -i -e "s/{{gh_issues}}/$GH_ISSUES/g" index.html
 sed -i -e "s/{{gh_prs}}/$GH_PRS/g" index.html
+sed -i -e "s/{{gh_repos_created}}/$GH_REPOS_CREATED/g" index.html
 sed -i -e "s/{{gh_repos_contributed}}/$GH_REPOS_CONTRIBUTED/g" index.html
+sed -i -e "s/{{gh_stars}}/$GH_STARS/g" index.html
 sed -i -e "s/{{copyright_year}}/$COPYRIGHT_YEAR/g" index.html
