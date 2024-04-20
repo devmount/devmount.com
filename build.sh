@@ -50,8 +50,13 @@ GH_PRS_REVIEWED=$(python3 -c "import json; from functools import reduce; print(r
 # Build GitHub repository stats
 GH_REPOS_LIST=(${REPOS_GITHUB//,/ })
 GH_REPOS_COMMITS=()
+GH_REPOS_STARS=()
+GH_REPOS_DESCRIPTION=()
 for r in "${GH_REPOS_LIST[@]}"; do
   GH_REPOS_COMMITS+=($(curl -s -I -k "https://api.github.com/repos/$r/commits?per_page=1" | sed -n '/^[Ll]ink:/ s/.*"next".*page=\([0-9]*\).*"last".*/\1/p'))
+  RESULT=$(curl -s "https://api.github.com/repos/$r")
+  GH_REPOS_STARS+=($(python3 -c "import json; print(json.loads('$RESULT')['stargazers_count'])"))
+  GH_REPOS_DESCRIPTION+=($(python3 -c "import json; print(json.loads('$RESULT')['description'])"))
 done
 
 # Create a new file from template
@@ -73,5 +78,8 @@ sed -i \
   -e "s/{{copyright_year}}/$COPYRIGHT_YEAR/g" index.html
 
 for i in $(seq 1 ${#GH_REPOS_LIST[@]}); do
-  sed -i -e "s/{{gh_repo_${i}_commits}}/${GH_REPOS_COMMITS[((i-1))]}/g" index.html
+  sed -i
+    -e "s/{{gh_repo_${i}_commits}}/${GH_REPOS_COMMITS[((i-1))]}/g"
+    -e "s/{{gh_repo_${i}_description}}/${GH_REPOS_DESCRIPTION[((i-1))]}/g"
+    -e "s/{{gh_repo_${i}_stars}}/${GH_REPOS_STARS[((i-1))]}/g" index.html
 done
