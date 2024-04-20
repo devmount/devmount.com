@@ -59,10 +59,25 @@ for r in "${GH_REPOS_LIST[@]}"; do
   GH_REPOS_DESCRIPTION+=($(python3 -c "import json; print(json.loads('$RESULT')['description'])"))
 done
 
+# Build dev.to post stats
+DEV_POSTS_LIST=(${POSTS_DEV//,/ })
+DEV_POSTS_REACTIONS=()
+DEV_POSTS_COMMENTS=()
+DEV_POSTS_PUBLISHED=()
+DEV_POSTS_READING_TIME=()
+for r in "${DEV_POSTS_LIST[@]}"; do
+  RESULT=$(curl -s "https://dev.to/api/articles/$r")
+  DEV_POSTS_REACTIONS+=($(python3 -c "import json; print(json.loads('$RESULT')['positive_reactions_count'])"))
+  DEV_POSTS_COMMENTS+=($(python3 -c "import json; print(json.loads('$RESULT')['comments_count'])"))
+  DEV_POSTS_PUBLISHED+=($(python3 -c "import json; print(json.loads('$RESULT')['readable_publish_date'])"))
+  DEV_POSTS_READING_TIME+=($(python3 -c "import json; print(json.loads('$RESULT')['reading_time_minutes'])"))
+done
+
 # Create a new file from template
 cp index.template.html index.html
 
 # Update file while replacing all markers
+# Replace general markers
 sed -i \
   -e "s/{{year}}/$YEAR/g"\
   -e "s/{{age}}/$AGE/g"\
@@ -77,9 +92,19 @@ sed -i \
   -e "s/{{gh_stars}}/$GH_STARS/g"\
   -e "s/{{copyright_year}}/$COPYRIGHT_YEAR/g" index.html
 
+# Replace GitHub repository specific markers
 for i in $(seq 1 ${#GH_REPOS_LIST[@]}); do
-  sed -i
-    -e "s/{{gh_repo_${i}_commits}}/${GH_REPOS_COMMITS[((i-1))]}/g"
-    -e "s/{{gh_repo_${i}_description}}/${GH_REPOS_DESCRIPTION[((i-1))]}/g"
+  sed -i \
+    -e "s/{{gh_repo_${i}_commits}}/${GH_REPOS_COMMITS[((i-1))]}/g"\
+    -e "s/{{gh_repo_${i}_description}}/${GH_REPOS_DESCRIPTION[((i-1))]}/g"\
     -e "s/{{gh_repo_${i}_stars}}/${GH_REPOS_STARS[((i-1))]}/g" index.html
+done
+
+# Replace dev.to post specific markers
+for i in $(seq 1 ${#DEV_POSTS_LIST[@]}); do
+  sed -i \
+    -e "s/{{dev_post_${i}_reactions}}/${DEV_POSTS_REACTIONS[((i-1))]}/g"\
+    -e "s/{{dev_post_${i}_comments}}/${DEV_POSTS_COMMENTS[((i-1))]}/g"\
+    -e "s/{{dev_post_${i}_date}}/${DEV_POSTS_PUBLISHED[((i-1))]}/g"\
+    -e "s/{{dev_post_${i}_reading_time}}/${DEV_POSTS_READING_TIME[((i-1))]}/g" index.html
 done
