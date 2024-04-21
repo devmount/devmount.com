@@ -53,10 +53,10 @@ GH_REPOS_COMMITS=()
 GH_REPOS_STARS=()
 GH_REPOS_DESCRIPTION=()
 for r in "${GH_REPOS_LIST[@]}"; do
-  GH_REPOS_COMMITS+=($(curl -s -I -k "https://api.github.com/repos/$r/commits?per_page=1" | sed -n '/^[Ll]ink:/ s/.*"next".*page=\([0-9]*\).*"last".*/\1/p'))
-  RESULT=$(curl -s "https://api.github.com/repos/$r")
+  GH_REPOS_COMMITS+=($(curl -s -I -k -H "Authorization: bearer $GITHUB_TOKEN" "https://api.github.com/repos/$r/commits?per_page=1" | sed -n '/^[Ll]ink:/ s/.*"next".*page=\([0-9]*\).*"last".*/\1/p'))
+  RESULT=$(curl -s -H "Authorization: bearer $GITHUB_TOKEN" "https://api.github.com/repos/$r" | tr -d "\n")
   GH_REPOS_STARS+=($(python3 -c "import json; print(json.loads('$RESULT')['stargazers_count'])"))
-  GH_REPOS_DESCRIPTION+=($(python3 -c "import json; print(json.loads('$RESULT')['description'])"))
+  GH_REPOS_DESCRIPTION+=("$(python3 -c "import json; print(json.loads('$RESULT')['description'])")")
 done
 
 # Build dev.to post stats
@@ -65,12 +65,12 @@ DEV_POSTS_REACTIONS=()
 DEV_POSTS_COMMENTS=()
 DEV_POSTS_PUBLISHED=()
 DEV_POSTS_READING_TIME=()
-for r in "${DEV_POSTS_LIST[@]}"; do
-  RESULT=$(curl -s "https://dev.to/api/articles/$r")
-  DEV_POSTS_REACTIONS+=($(python3 -c "import json; print(json.loads('$RESULT')['positive_reactions_count'])"))
-  DEV_POSTS_COMMENTS+=($(python3 -c "import json; print(json.loads('$RESULT')['comments_count'])"))
-  DEV_POSTS_PUBLISHED+=($(python3 -c "import json; print(json.loads('$RESULT')['readable_publish_date'])"))
-  DEV_POSTS_READING_TIME+=($(python3 -c "import json; print(json.loads('$RESULT')['reading_time_minutes'])"))
+for p in "${DEV_POSTS_LIST[@]}"; do
+  RESULT=$(curl -s "https://dev.to/api/articles/$p")
+  DEV_POSTS_REACTIONS+=($(echo $RESULT | sed -r 's/.*"positive_reactions_count":([0-9]*),.*/\1/g'))
+  DEV_POSTS_COMMENTS+=($(echo $RESULT | sed -r 's/.*"comments_count":([0-9]*),.*/\1/g'))
+  DEV_POSTS_PUBLISHED+=("$(echo $RESULT | sed -r 's/.*"readable_publish_date":"(.*)",.*/\1/g')")
+  DEV_POSTS_READING_TIME+=($(echo $RESULT | sed -r 's/.*"reading_time_minutes":([0-9]*),.*/\1/g'))
 done
 
 # Create a new file from template
