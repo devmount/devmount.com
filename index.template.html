@@ -38,9 +38,9 @@
           I love God and do all my work unto him.
           I build applications that run in your browser and on your web server.
           I publish articles and tutorials about web technologies and related topics
-          on <a href="https://dev.to/devmount" rel="noopener noreferrer" target="_blank" title="devmount on dev.to">DEV</a>,
-          <a href="https://medium.com/@devmount" rel="noopener noreferrer" target="_blank" title="devmount on Medium">Medium</a>
-          and <a href="https://mstdn.io/@devmount" rel="noopener noreferrer" target="_blank" title="devmount on Mastodon">Mastodon</a>.
+          on <a href="https://dev.to/{{user_dev}}" rel="noopener noreferrer" target="_blank" title="devmount on dev.to">DEV</a>,
+          <a href="https://medium.com/{{user_medium}}" rel="noopener noreferrer" target="_blank" title="devmount on Medium">Medium</a>
+          and <a href="https://{{user_mastodon}}" rel="noopener noreferrer" target="_blank" title="devmount on Mastodon">Mastodon</a>.
         </p>
       </div>
     </section>
@@ -681,7 +681,7 @@
             </div>
 
             <p class="justify-self-center self-center">
-              Find all my public <a href="https://github.com/devmount" target="_blank">repositories on GitHub</a>.
+              Find all my public <a href="https://github.com/{{user_github}}" target="_blank">repositories on GitHub</a>.
             </p>
             
           </div>
@@ -829,8 +829,8 @@
         <p class="my-8">
           These projects are completely free to use.
           If you enjoy any of them and don't have the time to contribute, please consider
-          <a href="https://paypal.me/devmount">donating via Paypal</a> or
-          <a href="https://github.com/sponsors/devmount">sponsoring me</a> to support further development.
+          <a href="{{url_donation}}" target="_blank">donating via Paypal</a> or
+          <a href="{{url_sponsoring}}" target="_blank">sponsoring me</a> to support further development.
         </p>
 
       </div>
@@ -845,8 +845,8 @@
         <div class="content-box p-6 mb-4">
           <h4 class="mb-2 font-black">Technical Articles</h4>
           <p class="mb-8">
-            I started writing technical posts on <a href="https://medium.com/@devmount" target="_blank">Medium</a>,
-            but later switched to <a href="https://dev.to/devmount" rel="noopener noreferrer" target="_blank">DEV</a>
+            I started writing technical posts on <a href="https://medium.com/{{user_medium}}" target="_blank">Medium</a>,
+            but later switched to <a href="https://dev.to/{{user_dev}}" rel="noopener noreferrer" target="_blank">DEV</a>
             because I found it to be a welcoming and encouraging community from devs for devs.
             Plus the whole platform is <a href="https://github.com/thepracticaldev/dev.to" rel="noopener noreferrer" target="_blank">open source</a>.
             Here are some of my more popular posts.
@@ -1176,7 +1176,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://github.com/devmount"
+              href="https://github.com/{{user_github}}"
               target="_blank"
               rel="noopener me"
               title="devmount on GitHub"
@@ -1194,7 +1194,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://dev.to/devmount"
+              href="https://dev.to/{{user_dev}}"
               target="_blank"
               rel="noopener me"
               title="devmount on dev.to"
@@ -1212,7 +1212,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://mstdn.io/@devmount"
+              href="https://{{user_mastodon}}"
               target="_blank"
               rel="noopener me"
               title="devmount on Mastodon"
@@ -1231,7 +1231,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://www.linkedin.com/in/devmount"
+              href="https://www.linkedin.com/in/{{user_linkedin}}"
               target="_blank"
               rel="noopener me"
               title="devmount on LinkedIn"
@@ -1253,7 +1253,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://www.xing.com/profile/Andreas_Mueller2007"
+              href="https://www.xing.com/profile/{{user_xing}}"
               target="_blank"
               rel="noopener me"
               title="devmount on Xing"
@@ -1272,7 +1272,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://medium.com/@devmount"
+              href="https://medium.com/{{user_medium}}"
               target="_blank"
               rel="noopener me"
               title="devmount on Medium"
@@ -1295,7 +1295,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://stackoverflow.com/story/devmount"
+              href="https://stackoverflow.com/users/{{user_stackoverflow}}"
               target="_blank"
               rel="noopener me"
               title="devmount on StackOverflow"
@@ -1318,7 +1318,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://keybase.io/devmount"
+              href="https://keybase.io/{{user_keybase}}"
               target="_blank"
               rel="noopener me"
               title="devmount on Keybase"
@@ -1336,7 +1336,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://codepen.io/devmount"
+              href="https://codepen.io/{{user_codepen}}"
               target="_blank"
               rel="noopener me"
               title="devmount on Codepen"
@@ -1360,7 +1360,7 @@
           <li class="click-box !rounded-full bg-accent-gradient shadow">
             <a
               class="flex gap-2 text-sm !rounded-full p-4"
-              href="https://twitter.com/devmount"
+              href="https://twitter.com/{{user_x}}"
               target="_blank"
               rel="noopener me"
               title="devmount on X (Twitter)"
@@ -1387,30 +1387,30 @@
           <div class="click-box bg-accent-gradient shadow">
             <a
               class="grid grid-cols-2(1:2) gap-4 w-full !no-underline p-4"
-              href="https://matrix.to/#/@devmount:matrix.org"
+              href="https://matrix.to/#/{{user_matrix}}"
               target="_blank"
             >
               <div class="w-16 font-semibold justify-self-end text-right">Matrix</div>
-              <div>@devmount:matrix.org</div>
+              <div>{{user_matrix}}</div>
             </a>
           </div>
           <div class="click-box bg-accent-gradient shadow">
             <a
               class="grid grid-cols-2(1:2) gap-4 w-full !no-underline p-4"
-              href="https://keybase.io/devmount/pgp_keys.asc?fingerprint=65459d08695487f69e110b3b29b14997f76a5800"
+              href="https://keybase.io/devmount/pgp_keys.asc?fingerprint={{pgp_fingerprint_keybase}}"
               target="_blank"
             >
               <div class="w-16 font-semibold justify-self-end text-right">PGP</div>
-              <div>29B1 4997 F76A 5800</div>
+              <div>{{fingerprint_preview}}</div>
             </a>
           </div>
           <div class="click-box bg-accent-gradient shadow">
             <a
               class="grid grid-cols-2(1:2) gap-4 w-full !no-underline p-4"
-              href="mailto:hello@devmount.com"
+              href="mailto:{{email}}"
             >
               <div class="w-16 font-semibold justify-self-end text-right">E-Mail</div>
-              <div>hello@devmount.com</div>
+              <div>{{email}}</div>
             </a>
           </div>
         </div>
@@ -1427,8 +1427,8 @@
         Available on <a href="https://github.com/devmount/devmount.com" target="_blank">GitHub</a>.
       </div>
       <div class="flex gap-4">
-        <a class="text-current" href="/legal.html" target="_blank">Legal</a>
-        <a class="text-current" href="/privacy.html" target="_blank">Privacy</a>
+        <a class="text-current" href="{{url_legal}}" target="_blank">Legal</a>
+        <a class="text-current" href="{{url_privacy}}" target="_blank">Privacy</a>
       </div>
     </nav>
   </footer>
