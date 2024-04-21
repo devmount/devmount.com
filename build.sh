@@ -63,14 +63,12 @@ done
 DEV_POSTS_LIST=(${POSTS_DEV//,/ })
 DEV_POSTS_REACTIONS=()
 DEV_POSTS_COMMENTS=()
-DEV_POSTS_PUBLISHED=()
 DEV_POSTS_READING_TIME=()
 for p in "${DEV_POSTS_LIST[@]}"; do
   RESULT=$(curl -s "https://dev.to/api/articles/$p")
-  DEV_POSTS_REACTIONS+=($(echo $RESULT | sed -r 's/.*"positive_reactions_count":([0-9]*),.*/\1/g'))
-  DEV_POSTS_COMMENTS+=($(echo $RESULT | sed -r 's/.*"comments_count":([0-9]*),.*/\1/g'))
-  DEV_POSTS_PUBLISHED+=("$(echo $RESULT | sed -r 's/.*"readable_publish_date":"(.*)",.*/\1/g')")
-  DEV_POSTS_READING_TIME+=($(echo $RESULT | sed -r 's/.*"reading_time_minutes":([0-9]*),.*/\1/g'))
+  DEV_POSTS_REACTIONS+=($(echo $RESULT | sed -r 's|.*"positive_reactions_count":([0-9]*),.*|\1|g'))
+  DEV_POSTS_COMMENTS+=($(echo $RESULT | sed -r 's|.*"comments_count":([0-9]*),.*|\1|g'))
+  DEV_POSTS_READING_TIME+=($(echo $RESULT | sed -r 's|.*"reading_time_minutes":([0-9]*),.*|\1|g'))
 done
 
 # Create a new file from template
@@ -79,32 +77,31 @@ cp index.template.html index.html
 # Update file while replacing all markers
 # Replace general markers
 sed -i \
-  -e "s/{{year}}/$YEAR/g"\
-  -e "s/{{age}}/$AGE/g"\
-  -e "s/{{profession_age}}/$PROFESSION_AGE/g"\
-  -e "s/{{opensource_age}}/$OPENSOURCE_AGE/g"\
-  -e "s/{{gh_issues}}/$GH_ISSUES/g"\
-  -e "s/{{gh_prs}}/$GH_PRS/g"\
-  -e "s/{{gh_repos_created}}/$GH_REPOS_CREATED/g"\
-  -e "s/{{gh_repos_contributed}}/$GH_REPOS_CONTRIBUTED/g"\
-  -e "s/{{gh_prs_reviewed}}/$GH_PRS_REVIEWED/g"\
-  -e "s/{{gh_commits}}/$GH_COMMITS/g"\
-  -e "s/{{gh_stars}}/$GH_STARS/g"\
+  -e "s/{{year}}/$YEAR/g" \
+  -e "s/{{age}}/$AGE/g" \
+  -e "s/{{profession_age}}/$PROFESSION_AGE/g" \
+  -e "s/{{opensource_age}}/$OPENSOURCE_AGE/g" \
+  -e "s/{{gh_issues}}/$GH_ISSUES/g" \
+  -e "s/{{gh_prs}}/$GH_PRS/g" \
+  -e "s/{{gh_repos_created}}/$GH_REPOS_CREATED/g" \
+  -e "s/{{gh_repos_contributed}}/$GH_REPOS_CONTRIBUTED/g" \
+  -e "s/{{gh_prs_reviewed}}/$GH_PRS_REVIEWED/g" \
+  -e "s/{{gh_commits}}/$GH_COMMITS/g" \
+  -e "s/{{gh_stars}}/$GH_STARS/g" \
   -e "s/{{copyright_year}}/$COPYRIGHT_YEAR/g" index.html
 
 # Replace GitHub repository specific markers
 for i in $(seq 1 ${#GH_REPOS_LIST[@]}); do
   sed -i \
-    -e "s/{{gh_repo_${i}_commits}}/${GH_REPOS_COMMITS[((i-1))]}/g"\
-    -e "s/{{gh_repo_${i}_description}}/${GH_REPOS_DESCRIPTION[((i-1))]}/g"\
+    -e "s/{{gh_repo_${i}_commits}}/${GH_REPOS_COMMITS[((i-1))]}/g" \
+    -e "s/{{gh_repo_${i}_description}}/${GH_REPOS_DESCRIPTION[((i-1))]}/g" \
     -e "s/{{gh_repo_${i}_stars}}/${GH_REPOS_STARS[((i-1))]}/g" index.html
 done
 
 # Replace dev.to post specific markers
 for i in $(seq 1 ${#DEV_POSTS_LIST[@]}); do
   sed -i \
-    -e "s/{{dev_post_${i}_reactions}}/${DEV_POSTS_REACTIONS[((i-1))]}/g"\
-    -e "s/{{dev_post_${i}_comments}}/${DEV_POSTS_COMMENTS[((i-1))]}/g"\
-    -e "s/{{dev_post_${i}_date}}/${DEV_POSTS_PUBLISHED[((i-1))]}/g"\
-    -e "s/{{dev_post_${i}_reading_time}}/${DEV_POSTS_READING_TIME[((i-1))]}/g" index.html
+    -e "s|{{dev_post_${i}_reactions}}|${DEV_POSTS_REACTIONS[((i-1))]}|g" \
+    -e "s|{{dev_post_${i}_comments}}|${DEV_POSTS_COMMENTS[((i-1))]}|g" \
+    -e "s|{{dev_post_${i}_reading_time}}|${DEV_POSTS_READING_TIME[((i-1))]}|g" index.html
 done
