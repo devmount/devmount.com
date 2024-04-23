@@ -70,11 +70,25 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* base styles */
 html {
   font-family: Inter, system-ui, sans-serif;
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   color: var(--fg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(95deg, transparent 0%, var(--bg) 25%, var(--bg) 75%, transparent 100%),
+    url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="black" style="opacity:.15"><path d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3z" /></svg>');
+  min-height: 100vh;
 }
 
 body {
@@ -531,6 +545,22 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 }
 .opacity-0 {
   opacity: 0;
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+.animation-delay-250 {
+  animation-delay: 250ms;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+.animation-delay-750 {
+  animation-delay: 750ms;
+}
+.animation-delay-1000 {
+  animation-delay: 1000ms;
 }
 
 /* responsive utilities */

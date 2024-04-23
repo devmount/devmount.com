@@ -18,7 +18,7 @@
 
     <!-- short introduction -->
     <section>
-      <div class="flex justify-center items-center my-8 lg:my-12">
+      <div class="flex justify-center items-center my-8 lg:my-12 animate-fade-in">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -31,7 +31,7 @@
           <span class="whitespace-nowrap"><span class="text-featured">Andreas</span><span class="animate-blink">_</span></span>
         </h1>
       </div>
-      <div class="content-box p-4">
+      <div class="content-box p-4 animate-fade-in animation-delay-250">
         <p class="mb-4">
           I'm a {{age}} y/o freelance Software engineer, Creator and Consultant based in Berlin, Germany.
         </p>
@@ -47,7 +47,7 @@
     </section>
 
     <!-- navigation for three main content sections -->
-    <nav>
+    <nav class=" animate-fade-in animation-delay-500">
       <ul role="list" class="grid grid-cols-2 lg:grid-cols-4 gap-4 p-0 m-0">
         <li class="nav-box bg-accent-gradient shadow">
           <label class="p-4">
@@ -134,7 +134,7 @@
     </nav>
 
     <!-- three main content sections, visible if activated via nav -->
-    <section>
+    <section class=" animate-fade-in animation-delay-500">
 
       <!-- work -->
       <div class="nav-content">
@@ -1168,7 +1168,7 @@
     </section>
 
     <!-- socials and contact -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fade-in animation-delay-750">
       <div>
         <h3 class="font-black text-3xl text-center mb-8 text-emphasized">
           Let's connect
@@ -1420,7 +1420,7 @@
 
   </main>
 
-  <footer class="my-12">
+  <footer class="my-12 animate-fade-in animation-delay-1000">
     <nav class="flex flex-wrap gap-4 justify-between items-center text-sm">
       <div class="text-sm">
         Copyright &copy; {{copyright_year}} - {{year}} Andreas Müller<br>
