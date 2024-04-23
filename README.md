@@ -16,15 +16,15 @@ This projects has two independent parts: **Retrieving the data** and **serving t
    cp .env.example .env
    ```
 
-2. Modify the `index.template.html` file to your needs. You can use a lot of template variables base on the `.env` entries, in format `{{var_name}}` (see all available template variables below)
-3. Run `./build.sh` manually or setup any automation to run this file (like cron or GitHub actions). It creates an `index.html` file from the template with all variables replaced
+2. Modify the `index.template.html` file to your needs. You can use template variables which are based on the `.env` entries, in format `{{var_name}}` (see all available template variables in the table below). Make sure to fill in all ENV vars that are a requirement for the template variables you use.
+3. Run `./build.sh` manually or setup any automation to run this file (like cron or GitHub actions). It creates an `index.html` file from the template with all variables replaced. Keep in mind that there are API call limits.
 4. Serve the website by putting the files anywhere you want and calling the generated `index.html` or pointing your web server to the containing directory
 
 ## Template variables
 
 You can use the following template variables:
 
-| Template variable               | Description                                                   | Based on ENV var          |
+| Template variable               | Description                                                   | Required ENV var          |
 |---------------------------------|---------------------------------------------------------------|---------------------------|
 | `{{user_github}}`               | Your GitHub username                                          | `USER_GITHUB`             |
 | `{{user_dev}}`                  | Your dev.to username                                          | `USER_DEV`                |

@@ -4,8 +4,8 @@
   --fg: light-dark(#334, #dfe2e3);
   --accent1: light-dark(#08f, #38d);
   --accent2: light-dark(#f25, #b35);
-  --gray1: light-dark(#223, #aab);
-  --gray2: light-dark(#667, #99a);
+  --gray1: light-dark(#223, #889);
+  --gray2: light-dark(#667, #ccd);
   --accent-gradient: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, light-dark(white, #1c1c1c) 60%);
   --accent1-gradient: linear-gradient(45deg, var(--gray1), var(--accent1) 30%, white 60%);
   --accent2-gradient: linear-gradient(45deg, var(--gray1), var(--accent2) 30%, white 60%);
@@ -61,6 +61,14 @@
   font-weight: 900;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @keyframes pulse {
   0%, 25%, 100% {
     opacity: 1;
@@ -82,7 +90,6 @@
 /* base styles */
 html {
   font-family: Inter, system-ui, sans-serif;
-  /* background-color: var(--bg); */
   color: var(--fg);
   background-color: var(--bg);
   background-image:
@@ -387,6 +394,18 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -394,6 +413,9 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
 }
 .text-current {
   color: currentColor;
