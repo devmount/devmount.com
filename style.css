@@ -1,12 +1,13 @@
 :root {
   color-scheme: light dark;
-  --bg: light-dark(#f6f6f6, #202122);
+  --bg: light-dark(#f6f6f6, #031b2b);
+  --bg-alt: light-dark(white, #011726);
   --fg: light-dark(#334, #dfe2e3);
   --accent1: light-dark(#08f, #38d);
   --accent2: light-dark(#f25, #b35);
   --gray1: light-dark(#223, #889);
   --gray2: light-dark(#667, #ccd);
-  --accent-gradient: linear-gradient(45deg, var(--accent1), var(--accent2) 30%, light-dark(white, #1c1c1c) 60%);
+  --accent-gradient: linear-gradient(45deg, var(--accent1), var(--accent2) 33%, var(--bg-alt) 60%);
   --accent1-gradient: linear-gradient(45deg, var(--gray1), var(--accent1) 30%, white 60%);
   --accent2-gradient: linear-gradient(45deg, var(--gray1), var(--accent2) 30%, white 60%);
   --gray-gradient: linear-gradient(45deg, var(--gray1), var(--gray2) 30%, white 60%);
@@ -94,7 +95,7 @@ html {
   background-color: var(--bg);
   background-image:
     linear-gradient(95deg, transparent 0%, var(--bg) 25%, var(--bg) 75%, transparent 100%),
-    url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="black" style="opacity:.15"><path d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3z" /></svg>');
+    url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="black" style="opacity:.2"><path d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3z" /></svg>');
   min-height: 100vh;
 }
 
@@ -159,8 +160,8 @@ ul > li::marker {
 }
 
 .content-box {
-  border: 1px solid color-mix(in srgb, var(--accent1) 20%, light-dark(white, #333));
-  background-color: light-dark(white, #1c1c1c);
+  border: 1px solid color-mix(in srgb, var(--accent1) 20%, var(--bg-alt));
+  background-color: var(--bg-alt);
   border-radius: .375rem;
 }
 
@@ -179,7 +180,7 @@ ul > li::marker {
   line-height: 1.4;
   border-radius: 4px;
   color: var(--fg);
-  background-color: light-dark(white, #1c1c1c);
+  background-color: var(--bg-alt);
   opacity: 0.8;
   cursor: pointer;
 }
