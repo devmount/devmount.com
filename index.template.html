@@ -6,7 +6,9 @@
   <link rel="icon" type="image/icon" href="./favicon.ico" />
   <link rel="stylesheet" href="./style.css" />
   <meta name="generator" content="Andreas Müller" />
-  <meta name="description" content="A {{age}} y/o freelance Software engineer, Creator and Consultant based in Berlin, Germany.">
+  <meta name="description" content="A freelance fullstack software engineer, content creator and consultant based in Berlin, Germany.">
+  <meta property="og:image" content="https://devmount.de/media/site/3cff471f8f-1632319814/title.jpg" />
+  <meta name="theme-color" content="#1b3e55" />
   <meta name="darkreader-lock" content="">
   <title>Andreas Müller - Developer. Creator. Consultant.</title>
 </head>
@@ -19,7 +21,7 @@
 
     <!-- short introduction -->
     <section>
-      <div class="flex justify-center items-center my-8 lg:my-12 animate-fade-in">
+      <div class="flex justify-center items-center my-8 lg:my-12">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -137,13 +139,58 @@
     </nav>
 
     <!-- three main content sections, visible if activated via nav -->
-    <section class=" animate-fade-in animation-delay-300">
+    <section class="animate-fade-in animation-delay-300">
 
       <!-- work -->
       <div class="nav-content">
         <h2 class="font-black text-3xl text-center mb-8 text-emphasized">
-          Work &amp;&amp; Professional Experience
+          Work &amp;&amp; Skills
         </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <!-- Spoken languages -->
+          <div class="content-box p-6 mb-4">
+            <h3 class="mb-2 font-black text-lg">Languages for Humans</h3>
+            <ul class="m-0 pl-5">
+              <li>German (native)</li>
+              <li>English (fluent)</li>
+              <li>French (basic)</li>
+            </ul>
+          </div>
+          <!-- programming languages -->
+          <div class="content-box p-6 mb-4">
+            <h3 class="mb-2 font-black text-lg">Languages for Computers</h3>
+            <span class="inline-flex flex-wrap gap-1 align-text-top">
+              <span class="tag">PHP</span>
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Bash</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">Markdown</span>
+              <span class="tag">&hellip;</span>
+            </span>
+          </div>
+          <!-- frameworks -->
+          <div class="content-box p-6 mb-4">
+            <h3 class="mb-2 font-black text-lg">Frameworks / Libs</h3>
+            <span class="inline-flex flex-wrap gap-1 align-text-top">
+              <span class="tag">Vue</span>
+              <span class="tag">Vite</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Alpine</span>
+              <span class="tag">Laravel</span>
+              <span class="tag">Wordpress</span>
+              <span class="tag">Typo3</span>
+              <span class="tag">Kirby CMS</span>
+              <span class="tag">&hellip;</span>
+            </span>
+          </div>
+        </div>
 
         <!-- resume and cv -->
         <div class="content-box p-6 mb-4">
