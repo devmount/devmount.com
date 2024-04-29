@@ -312,8 +312,8 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 .stroke-3 {
   stroke-width: 3;
 }
-.stroke-12 {
-  stroke-width: 12;
+.stroke-8 {
+  stroke-width: 8;
 }
 .fill-none {
   fill: none;
@@ -484,6 +484,10 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem
+}
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem
 }
 .mb-2 {
   margin-bottom: .5rem
