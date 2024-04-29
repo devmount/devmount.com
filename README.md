@@ -2,9 +2,11 @@
 
 Do you remember the days when websites consisted of just 3 files or less? One for server-side scripts (or markup only), one for client-side scripts and one for styles. While I think that the use of frameworks and a lot of build steps is absolutely necessary for certain use cases, I believe that they can be total overkill fsor smaller projects.
 
-This is why I decided to build my personal portfolio website the old-fashioned way. You can find it soon on <https://devmount.com>.
+This is why I decided to build my personal portfolio website the old-fashioned way. You can find it on <https://devmount.com>.
 
 I created this for my website, but you know I love FOSS so you can totally use this repo as template for your own page.
+
+<img src="https://github.com/devmount/devmount.com/assets/5441654/1dcc0249-d97a-41d0-a6d6-ec3319e5601a" width="50%" />
 
 ## Get started
 
