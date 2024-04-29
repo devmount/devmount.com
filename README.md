@@ -6,7 +6,7 @@ This is why I decided to build my personal portfolio website the old-fashioned w
 
 I created this for my website, but you know I love FOSS so you can totally use this repo as template for your own page.
 
-<img src="https://github.com/devmount/devmount.com/assets/5441654/1dcc0249-d97a-41d0-a6d6-ec3319e5601a" width="50%" />
+<img src="https://github.com/devmount/devmount.com/assets/5441654/1dcc0249-d97a-41d0-a6d6-ec3319e5601a" width="50%" alt="screencast of devmount.com website appearance" />
 
 ## Get started
 

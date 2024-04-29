@@ -1,0 +1,39 @@
+# This workflow will deploy it to production
+# when a new version (git tag) is released
+# and build it on the prod server running the custom script
+
+name: Build & Deploy (Production)
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Push Build files to production environment
+      uses: burnett01/rsync-deployments@7.0.1
+      with:
+        switches: -avzr --delete
+        path: dist/
+        remote_path: ${{ secrets.DEPLOY_PATH }}
+        remote_host: ${{ secrets.DEPLOY_HOST }}
+        remote_port: ${{ secrets.DEPLOY_PORT }}
+        remote_user: ${{ secrets.DEPLOY_USER }}
+        remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
+        remote_key_pass: ${{ secrets.DEPLOY_SSH_PHRASE }}
+    - name: Build page
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        port: ${{ secrets.DEPLOY_PORT }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_SSH_KEY }}
+        passphrase: ${{ secrets.DEPLOY_SSH_PHRASE }}
+        script: |
+          cd ${{ secrets.DEPLOY_PATH }}
+          chmod +x build.sh
+          ./build.sh
