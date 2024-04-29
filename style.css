@@ -333,6 +333,9 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 .inline-flex {
   display: inline-flex;
 }
+.inline-block {
+  display: inline-block;
+}
 .grid {
   display: grid;
 }
@@ -359,6 +362,9 @@ nav:has(.nav-box:nth-child(4) input:checked) ~ section > div:nth-child(4) {
 }
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.justify-start {
+  justify-content: start;
 }
 .justify-center {
   justify-content: center;
