@@ -17,7 +17,7 @@ jobs:
     - name: Push Build files to production environment
       uses: burnett01/rsync-deployments@7.0.1
       with:
-        switches: -avzr --delete
+        switches: -avzr --exclude={'.git*','.env.*'}
         remote_path: ${{ secrets.DEPLOY_PATH }}
         remote_host: ${{ secrets.DEPLOY_HOST }}
         remote_port: ${{ secrets.DEPLOY_PORT }}
