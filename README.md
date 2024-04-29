@@ -49,22 +49,26 @@ You can use the following template variables:
 | `{{profession_age}}`            | The age of your business in years                             | `PROFESSION_SINCE_DATE`   |
 | `{{opensource_age}}`            | The age of your OS activities in years                        | `OPENSOURCE_SINCE_DATE`   |
 | `{{copyright_year}}`            | The age of your website in years                              | `COPYRIGHT_SINCE_DATE`    |
-| `{{gh_issues}}`                 | The number of GitHub issues you created                       |                           |
-| `{{gh_prs}}`                    | The number of GitHub PRs you created                          |                           |
-| `{{gh_repos_created}}`          | The number of GitHub repositories you created (without forks) |                           |
-| `{{gh_repos_contributed}}`      | The number of foreign GitHub repositories you contributed to  |                           |
-| `{{gh_prs_reviewed}}`           | The number of GitHub PRs you reviewd                          |                           |
-| `{{gh_commits}}`                | The number of commits you did on GitHub                       |                           |
-| `{{gh_stars}}`                  | The number of stars you received on GitHub repositories       |                           |
-| `{{gh_repo_<n>_commits}}`       | The number of commits of GitHub repository `n`\*              | `REPOS_GITHUB`            |
-| `{{gh_repo_<n>_description}}`   | The description of GitHub repository `n`\*                    | `REPOS_GITHUB`            |
-| `{{gh_repo_<n>_stars}}`         | The number of stars of GitHub repository `n`\*                | `REPOS_GITHUB`            |
-| `{{dev_post_<n>_reactions}}`    | The number of positive reactions to DEV post `n`\*            | `POSTS_DEV`               |
-| `{{dev_post_<n>_comments}}`     | The number of comments on DEV post `n`\*                      | `POSTS_DEV`               |
-| `{{dev_post_<n>_reading_time}}` | The reading time in minutes of DEV post `n`\*                 | `POSTS_DEV`               |
+| `{{gh_issues}}`                 | The number of GitHub issues you created                       | `GITHUB_TOKEN`            |
+| `{{gh_prs}}`                    | The number of GitHub PRs you created                          | `GITHUB_TOKEN`            |
+| `{{gh_repos_created}}`          | The number of GitHub repositories you created (without forks) | `GITHUB_TOKEN`            |
+| `{{gh_repos_contributed}}`      | The number of foreign GitHub repositories you contributed to  | `GITHUB_TOKEN`            |
+| `{{gh_prs_reviewed}}`           | The number of GitHub PRs you reviewd                          | `GITHUB_TOKEN`            |
+| `{{gh_commits}}`                | The number of commits you did on GitHub                       | `GITHUB_TOKEN`            |
+| `{{gh_stars}}`                  | The number of stars you received on GitHub repositories       | `GITHUB_TOKEN`            |
+| `{{gh_repo_N_commits}}`         | The number of commits of GitHub repository `N`\*              | `REPOS_GITHUB`            |
+| `{{gh_repo_N_description}}`     | The description of GitHub repository `N`\*                    | `REPOS_GITHUB`            |
+| `{{gh_repo_N_stars}}`           | The number of stars of GitHub repository `N`\*                | `REPOS_GITHUB`            |
+| `{{dev_post_N_reactions}}`      | The number of positive reactions to DEV post `N`\*            | `POSTS_DEV`               |
+| `{{dev_post_N_comments}}`       | The number of comments on DEV post `N`\*                      | `POSTS_DEV`               |
+| `{{dev_post_N_reading_time}}`   | The reading time in minutes of DEV post `N`\*                 | `POSTS_DEV`               |
 
-\* `n` is the position of the repository/post in the configured list, beginning with 1. Example: `{{gh_repo_2_description}}` will be replaced with the description of the second repository given in `REPOS_GITHUB` ENV var.
+\* Replace `N` with the position of the repository/post in the configured list, beginning with 1. Example: `{{gh_repo_2_description}}` will be replaced with the description of the second repository given in `REPOS_GITHUB` ENV var.
 
 ## Final thoughts
 
-This is basically a tiny static site generator and I know there are already great solutions out there. But sometimes, you just want to stay dependency free, keep things simple and and at the same time running longterm without having to worry about them.
+This is basically a tiny static site generator and I know there are already great solutions out there. But sometimes, you just want to stay dependency free, keep things simple and and at the same time up-to-date and running longterm without having to worry about them.
+
+## Licence
+
+This project is licensed under [MIT License](./LICENSE). Feel free to use it for your next little static website.
