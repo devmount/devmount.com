@@ -73,7 +73,7 @@ for p in "${DEV_POSTS_LIST[@]}"; do
 done
 
 # Create a new file from template
-cp index.template.html index.html
+cp template.html index.html
 
 # Update file while replacing all markers
 # Replace general markers

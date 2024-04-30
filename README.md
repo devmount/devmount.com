@@ -1,6 +1,6 @@
 # devmount.com
 
-Do you remember the days when websites consisted of just 3 files or less? One for server-side scripts (or markup only), one for client-side scripts and one for styles. While I think that the use of frameworks and a lot of build steps is absolutely necessary for certain use cases, I believe that they can be total overkill fsor smaller projects.
+Do you remember the days when websites consisted of just 3 files or less? One for server-side scripts (or markup only), one for client-side scripts and one for styles. While I think that the use of frameworks and a lot of build steps is absolutely necessary for certain use cases, I believe that they can be total overkill for smaller projects.
 
 This is why I decided to build my personal portfolio website the old-fashioned way. You can find it on <https://devmount.com>.
 
@@ -18,7 +18,7 @@ This projects has two independent parts: **Retrieving the data** and **serving t
    cp .env.example .env
    ```
 
-2. Modify the `index.template.html` file to your needs. You can use template variables which are based on the `.env` entries, in format `{{var_name}}` (see all available template variables in the table below). Make sure to fill in all ENV vars that are a requirement for the template variables you use.
+2. Modify the `template.html` file to your needs. You can use template variables which are based on the `.env` entries, in format `{{var_name}}` (see all available template variables in the table below). Make sure to fill in all ENV vars that are a requirement for the template variables you use.
 3. Run `./build.sh` manually or setup any automation to run this file (like cron or GitHub actions). It creates an `index.html` file from the template with all variables replaced. Keep in mind that there are API call limits.
 4. Serve the website by putting the files anywhere you want and calling the generated `index.html` or pointing your web server to the containing directory
 

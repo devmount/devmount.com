@@ -1,4 +1,4 @@
 # special files
 *.html
-!index.template.html
+!template.html
 .env
