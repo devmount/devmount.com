@@ -8,6 +8,8 @@ on:
   push:
     tags:
       - '*'
+  schedule:
+    - cron: '10 * * * *'
 
 jobs:
   build:
