@@ -1,5 +1,5 @@
-# This workflow will deploy it to production
-# when a new version (git tag) is released
+# This workflow will deploy this project to production
+# when a new version (git tag) is released or on schedule
 # and build it on the prod server running the custom script
 
 name: Build & Deploy (Production)
@@ -9,7 +9,7 @@ on:
     tags:
       - '*'
   schedule:
-    - cron: '5/10 * * * *'
+    - cron: '5/20 * * * *'
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
     - name: Push Build files to production environment
       uses: burnett01/rsync-deployments@7.0.1
       with:
-        switches: -avzr --exclude={'.git*','.env.*'}
+        switches: -avzr --exclude '.git*' --exclude '.env.*'
         remote_path: ${{ secrets.DEPLOY_PATH }}
         remote_host: ${{ secrets.DEPLOY_HOST }}
         remote_port: ${{ secrets.DEPLOY_PORT }}
@@ -36,5 +36,5 @@ jobs:
         passphrase: ${{ secrets.DEPLOY_SSH_PHRASE }}
         script: |
           cd ${{ secrets.DEPLOY_PATH }}
-          chmod +x build.sh
+          chmod 750 build.sh
           ./build.sh
