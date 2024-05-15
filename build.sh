@@ -1,7 +1,7 @@
 source .env
 
 # constants
-VERSION='1.0.3'
+VERSION='1.0.4'
 GH_API_URL='https://api.github.com/graphql'
 
 # Do date calculations
