@@ -5,9 +5,9 @@ GH_API_URL='https://api.github.com/graphql'
 
 # Do date calculations
 let YEAR=`date +%Y`
-let AGE=(`date +%s`-`date +%s -d $BIRTH_DATE`)/31536000
-let PROFESSION_AGE=(`date +%s`-`date +%s -d $PROFESSION_SINCE_DATE`)/31536000
-let OPENSOURCE_AGE=(`date +%s`-`date +%s -d $OPENSOURCE_SINCE_DATE`)/31536000
+let AGE=(`date +%s`-`date +%s -d $BIRTH_DATE`)/31556952
+let PROFESSION_AGE=(`date +%s`-`date +%s -d $PROFESSION_SINCE_DATE`)/31556952
+let OPENSOURCE_AGE=(`date +%s`-`date +%s -d $OPENSOURCE_SINCE_DATE`)/31556952
 let COPYRIGHT_YEAR=`date +%Y -d $COPYRIGHT_SINCE_DATE`
 let GH_YEAR=`date +%Y -d $OPENSOURCE_SINCE_DATE`
 FINGERPRINT_PREVIEW="$(echo ${PGP_FINGERPRINT_KEYBASE: -16} | sed 's/.\{4\}/& /g')"
