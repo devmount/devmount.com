@@ -1510,15 +1510,16 @@
       </svg>
     </div>
     <nav class="flex flex-wrap gap-4 justify-between items-center text-sm">
-      <div class="text-sm">
-        Copyright &copy; {{copyright_year}} - {{year}} Andreas Müller<br>
+      <div class="text-xs text-gray">
+        Last updated: {{updated_on}}. Build <code>v{{version}}</code><br />
+        Copyright &copy; {{copyright_year}} - {{year}} Andreas Müller<br />
         No cookies. No JavaScript.
         Licensed under <a href="https://github.com/devmount/devmount.com/blob/main/LICENSE" target="_blank">MIT</a>.
         Available on <a href="https://github.com/devmount/devmount.com" target="_blank">GitHub</a>.
       </div>
       <div class="flex gap-4">
-        <a class="text-current" href="{{url_legal}}" target="_blank">Legal</a>
-        <a class="text-current" href="{{url_privacy}}" target="_blank">Privacy</a>
+        <a class="text-gray" href="{{url_legal}}" target="_blank">Legal</a>
+        <a class="text-gray" href="{{url_privacy}}" target="_blank">Privacy</a>
       </div>
     </nav>
   </footer>

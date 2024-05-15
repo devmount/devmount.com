@@ -1,6 +1,7 @@
 source .env
 
 # constants
+VERSION='1.0.3'
 GH_API_URL='https://api.github.com/graphql'
 
 # Do date calculations
@@ -99,6 +100,8 @@ sed -i \
 
 # Replace computed markers
 sed -i \
+  -e "s|{{version}}|$VERSION|g" \
+  -e "s|{{updated_on}}|$(date +%F\ %H:%M)|g" \
   -e "s|{{year}}|$YEAR|g" \
   -e "s|{{age}}|$AGE|g" \
   -e "s|{{profession_age}}|$PROFESSION_AGE|g" \
