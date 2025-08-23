@@ -10,6 +10,7 @@ on:
       - '*'
   schedule:
     - cron: '5/20 * * * *'
+  workflow_dispatch:
 
 jobs:
   build:
