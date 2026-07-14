@@ -83,6 +83,7 @@ sed -i \
   -e "s|{{user_dev}}|$USER_DEV|g" \
   -e "s|{{user_medium}}|$USER_MEDIUM|g" \
   -e "s|{{user_mastodon}}|$USER_MASTODON|g" \
+  -e "s|{{user_dailydev}}|$USER_DAILYDEV|g" \
   -e "s|{{user_linkedin}}|$USER_LINKEDIN|g" \
   -e "s|{{user_xing}}|$USER_XING|g" \
   -e "s|{{user_stackoverflow}}|$USER_STACKOVERFLOW|g" \
