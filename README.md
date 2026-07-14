@@ -31,7 +31,8 @@ You can use the following template variables:
 | `{{user_github}}`               | Your GitHub username                                          | `USER_GITHUB`             |
 | `{{user_dev}}`                  | Your dev.to username                                          | `USER_DEV`                |
 | `{{user_medium}}`               | Your Medium username                                          | `USER_MEDIUM`             |
-| `{{user_mastodon}}`             | Your MAstodon server/@username                                | `USER_MASTODON`           |
+| `{{user_mastodon}}`             | Your Mastodon server/@username                                | `USER_MASTODON`           |
+| `{{user_dailydev}}`             | Your daily.dev username                                       | `USER_DAILYDEV`           |
 | `{{user_linkedin}}`             | Your LinkedIn username                                        | `USER_LINKEDIN`           |
 | `{{user_xing}}`                 | Your Xing username                                            | `USER_XING`               |
 | `{{user_stackoverflow}}`        | Your StackOverflow username                                   | `USER_STACKOVERFLOW`      |
